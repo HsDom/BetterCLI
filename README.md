@@ -29,4 +29,26 @@ def hello():
 #Provide a title, and a function to call when the button is pressed
 Menu.add_button("Say hello world", hello)
 ```
+To print the menu call show()
+```py
+#Shows the menu with the provided title,elements, and color
+Menu.show()
+```
 
+### Full Example Code
+```py
+from bettercli import *
+
+#Create a new menu
+#Colors: red, green, yellow, blue, magenta, cyan, white, black
+Menu = Menu("Example Main Menu", "blue")
+
+def hello():
+  print('hello world')
+
+#Provide a title, and a function to call when the button is pressed
+Menu.add_button("Say hello world", hello)
+
+#Shows the menu with the provided title,elements, and color
+Menu.show()
+```
