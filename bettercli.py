@@ -5,10 +5,29 @@ init()
 
 #Menu Class - Creates a menu 
 class Menu:
-    def __init__(self, title):
+    def __init__(self, title, color):
         self.title = title
         self.elements = []
         self.index = 0
+        
+        if color == "red":
+            self.color = "\033[41m"
+        elif color == "green":
+            self.color = "\033[42m"
+        elif color == "yellow":
+            self.color = "\033[43m"
+        elif color == "blue":
+            self.color = "\033[44m"
+        elif color == "magenta":
+            self.color = "\033[45m"
+        elif color == "cyan":
+            self.color = "\033[46m"
+        elif color == "white":
+            self.color = "\033[47m"
+        elif color == "black":
+            self.color = "\033[40m"
+        else:
+            self.color = "\033[41m"
 
     def add_button(self, button, function):
         self.elements.append([1,button, function])
@@ -41,14 +60,14 @@ class Menu:
                 if i == self.index:
                     #red background, white text
                     if self.elements[i][0] == 1:
-                        print("\033[41m", self.elements[i][1] + "\033[0m")
+                        print(self.color, self.elements[i][1] + "\033[0m")
                     elif self.elements[i][0] == 2:
-                        print("\033[41m ", self.elements[i][1] + f"< {self.elements[i][4]} >\033[0m")
+                        print(self.color, self.elements[i][1] + f"< {self.elements[i][4]} >\033[0m")
                     elif self.elements[i][0] == 3:
                         if self.elements[i][2] == True:
-                            print("\033[41m +", self.elements[i][1] + "\033[0m")
+                            print(self.color, self.elements[i][1] + "\033[0m")
                         else:
-                            print("\033[41m -", self.elements[i][1] + f"\033[0m")
+                            print(self.color, self.elements[i][1] + f"\033[0m")
                 else:
                     #white background, black text
                     if self.elements[i][0] == 1:
