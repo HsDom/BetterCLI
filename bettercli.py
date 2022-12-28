@@ -65,9 +65,9 @@ class Menu:
                         print(self.color, self.elements[i][1] + f"< {self.elements[i][4]} >\033[0m")
                     elif self.elements[i][0] == 3:
                         if self.elements[i][2] == True:
-                            print(self.color, self.elements[i][1] + "\033[0m")
+                            print(self.color, "[+] "+self.elements[i][1] + "\033[0m")
                         else:
-                            print(self.color, self.elements[i][1] + f"\033[0m")
+                            print(self.color, "[-] "+self.elements[i][1] + f"\033[0m")
                 else:
                     #white background, black text
                     if self.elements[i][0] == 1:
@@ -76,9 +76,9 @@ class Menu:
                         print(self.elements[i][1] + f"< {self.elements[i][4]} >")
                     elif self.elements[i][0] == 3:
                         if self.elements[i][2] == True:
-                            print("+", self.elements[i][1])
+                            print("[+]", self.elements[i][1])
                         else:
-                            print("-", self.elements[i][1])
+                            print("[-]", self.elements[i][1])
 
         #wait for a key press
         while True:
