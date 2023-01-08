@@ -1,4 +1,5 @@
 <h1 align="center">Discord Recovery</h1>
+Documentation Soon
 
 ## Installation
 Installs the necessary libraries.
